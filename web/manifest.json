@@ -1,0 +1,15 @@
+{
+  "name": "Sakura Print",
+  "short_name": "Sakura Print",
+  "description": "Print, scan and copy at home",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#fdf5f7",
+  "theme_color": "#fbe9ee",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

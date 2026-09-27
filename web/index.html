@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#fbe9ee">
+<title>Sakura Print</title>
+<link rel="icon" href="icon.svg">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Sakura Print">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<aside id="side" aria-label="Main">
+  <a class="brand" href="#/"><svg viewBox="-20 -20 40 40" aria-hidden="true"><g id="logo"></g></svg><span>Sakura Print</span></a>
+  <nav id="sidenav"></nav>
+</aside>
+<div id="main">
+  <header id="top">
+    <button class="back" id="back" hidden aria-label="Back"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
+    <a class="brand" id="brand" href="#/"><svg viewBox="-20 -20 40 40" aria-hidden="true"><g id="logo2"></g></svg></a>
+    <h1 id="ptitle"></h1>
+    <button id="pchip" class="pchip" hidden aria-label="Printer"><svg class="pic" viewBox="0 0 24 24"><path d="M7 8V3.5h10V8"/><rect x="2.5" y="8" width="19" height="9" rx="2.5"/><path d="M7 14h10v6.5H7z"/></svg><span class="dot"></span><span class="pname"></span></button>
+    <button id="bell" class="bell" aria-label="Notifications"><svg viewBox="0 0 24 24"><path d="M6 16V11a6 6 0 0112 0v5l1.5 2h-15z"/><path d="M10 20.5a2.2 2.2 0 004 0"/></svg><span id="bellcount"></span></button>
+  </header>
+  <main id="app"><div class="spin"></div></main>
+</div>
+<nav id="tabs" aria-label="Main"></nav>
+<section id="notices" hidden aria-label="Notifications"></section>
+<script src="app.js"></script>
+</body>
+</html>

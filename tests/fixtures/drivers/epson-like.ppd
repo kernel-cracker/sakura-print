@@ -1,0 +1,21 @@
+*PPD-Adobe: "4.3"
+*% A small driver file shaped like Epson's escpr, for tests (quality through cupsPrintQuality, no media type labels)
+*ModelName: "Epson L3250 Series"
+*OpenUI *PageSize/Media Size: PickOne
+*DefaultPageSize: A4
+*PageSize A4/A4: ""
+*PageSize A6/A6: ""
+*PageSize JapanesePostCard/Postcard: ""
+*CloseUI: *PageSize
+*PaperDimension A4/A4: "595.28 841.89"
+*PaperDimension A6/A6: "297.64 419.53"
+*PaperDimension JapanesePostCard/Postcard: "283.46 419.53"
+*ImageableArea A4/A4: "8.5 8.5 586.78 833.39"
+*ImageableArea A6/A6: "8.5 8.5 289.14 411.03"
+*ImageableArea JapanesePostCard/Postcard: "8.5 8.5 274.96 411.03"
+*OpenUI *cupsPrintQuality/Quality: PickOne
+*DefaultcupsPrintQuality: Normal
+*cupsPrintQuality Draft/Draft: ""
+*cupsPrintQuality Normal/Normal: ""
+*cupsPrintQuality High/High: ""
+*CloseUI: *cupsPrintQuality

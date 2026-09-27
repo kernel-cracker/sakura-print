@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="210mm" height="297mm" viewBox="0 0 300 424">
+<defs>
+<clipPath id="pg"><rect width="300" height="424"/></clipPath>
+<pattern id="dots" width="10" height="10" patternUnits="userSpaceOnUse"><circle cx="5" cy="5" r="1" fill="@L2@"/></pattern>
+<g id="fa"><circle cx="0" cy="-7" r="6" fill="@AC@"/><circle cx="6.66" cy="-2.16" r="6" fill="@AC@"/><circle cx="4.11" cy="5.66" r="6" fill="@AC@"/><circle cx="-4.11" cy="5.66" r="6" fill="@AC@"/><circle cx="-6.66" cy="-2.16" r="6" fill="@AC@"/><circle r="3" fill="@DEEP@"/></g>
+<g id="fb"><circle cx="0" cy="-7" r="6" fill="@L1@"/><circle cx="6.66" cy="-2.16" r="6" fill="@L1@"/><circle cx="4.11" cy="5.66" r="6" fill="@L1@"/><circle cx="-4.11" cy="5.66" r="6" fill="@L1@"/><circle cx="-6.66" cy="-2.16" r="6" fill="@L1@"/><circle r="3" fill="@MID@"/></g>
+<g id="fc"><ellipse cx="0" cy="-7" rx="2.6" ry="5" fill="@L2@"/><ellipse cx="0" cy="-7" rx="2.6" ry="5" fill="@L2@" transform="rotate(45)"/><ellipse cx="0" cy="-7" rx="2.6" ry="5" fill="@L2@" transform="rotate(90)"/><ellipse cx="0" cy="-7" rx="2.6" ry="5" fill="@L2@" transform="rotate(135)"/><ellipse cx="0" cy="-7" rx="2.6" ry="5" fill="@L2@" transform="rotate(180)"/><ellipse cx="0" cy="-7" rx="2.6" ry="5" fill="@L2@" transform="rotate(225)"/><ellipse cx="0" cy="-7" rx="2.6" ry="5" fill="@L2@" transform="rotate(270)"/><ellipse cx="0" cy="-7" rx="2.6" ry="5" fill="@L2@" transform="rotate(315)"/><circle r="3" fill="@AC@"/></g>
+<g id="cu"><polygon points="0,-10 9,-5 0,0 -9,-5" fill="@L1@"/><polygon points="-9,-5 0,0 0,10 -9,5" fill="@AC@"/><polygon points="0,0 9,-5 9,5 0,10" fill="@MID@"/></g>
+<ellipse id="lf" rx="4" ry="10" fill="@MID@"/>
+<ellipse id="pt" rx="2.5" ry="4.5" fill="@L2@"/>
+</defs>
+<g clip-path="url(#pg)">
+<rect width="300" height="424" fill="@BG@"/>
+<rect width="300" height="424" fill="url(#dots)" opacity="@DT@"/>
+<rect x="18" y="18" width="264" height="388" rx="12" fill="@CARD@" stroke="@L1@" stroke-width="1"/>
+<g opacity="@FL@">
+<use xlink:href="#lf" transform="translate(44 50) rotate(40)"/><use xlink:href="#lf" transform="translate(52 30) rotate(75)"/><use xlink:href="#lf" transform="translate(30 58) rotate(10)"/>
+<use xlink:href="#fa" transform="translate(28 30) scale(1.6)"/><use xlink:href="#fb" transform="translate(60 22) scale(.95)"/><use xlink:href="#fc" transform="translate(22 64) scale(.9)"/>
+<use xlink:href="#lf" transform="translate(256 374) rotate(220)"/><use xlink:href="#lf" transform="translate(248 394) rotate(255)"/><use xlink:href="#lf" transform="translate(270 366) rotate(190)"/>
+<use xlink:href="#fa" transform="translate(272 394) scale(1.6)"/><use xlink:href="#fb" transform="translate(240 402) scale(.95)"/><use xlink:href="#fc" transform="translate(278 360) scale(.9)"/>
+<path d="M84 82 Q150 56 216 82" fill="none" stroke="@AC@" stroke-width="1.5"/>
+<use xlink:href="#fb" transform="translate(92 78)"/><use xlink:href="#fa" transform="translate(120 67)"/><use xlink:href="#fa" transform="translate(150 62) scale(1.35)"/><use xlink:href="#fa" transform="translate(180 67)"/><use xlink:href="#fb" transform="translate(208 78)"/>
+<use xlink:href="#pt" transform="translate(40 150) rotate(30)"/><use xlink:href="#pt" transform="translate(262 168) rotate(-20)"/><use xlink:href="#pt" transform="translate(44 300) rotate(60)"/><use xlink:href="#pt" transform="translate(258 318) rotate(15)"/><use xlink:href="#pt" transform="translate(96 372) rotate(-40)"/><use xlink:href="#pt" transform="translate(206 110) rotate(50)"/>
+</g>
+<g opacity="@GE@">
+<use xlink:href="#cu" transform="translate(246 60)"/><use xlink:href="#cu" transform="translate(264 60)"/><use xlink:href="#cu" transform="translate(255 45)"/><use xlink:href="#cu" transform="translate(237 75)"/>
+<polygon points="36,196 46,214 26,214" fill="none" stroke="@AC@" stroke-width="1.2"/>
+<polygon points="267,222 276,227 276,239 267,244 258,239 258,227" fill="none" stroke="@AC@" stroke-width="1.2"/><circle cx="267" cy="233" r="2.5" fill="@MID@"/>
+<circle cx="72" cy="284" r="1.6" fill="@AC@"/><circle cx="82" cy="284" r="1.6" fill="@AC@"/><circle cx="92" cy="284" r="1.6" fill="@AC@"/><circle cx="102" cy="284" r="1.6" fill="@AC@"/>
+<circle cx="198" cy="284" r="1.6" fill="@AC@"/><circle cx="208" cy="284" r="1.6" fill="@AC@"/><circle cx="218" cy="284" r="1.6" fill="@AC@"/><circle cx="228" cy="284" r="1.6" fill="@AC@"/>
+<polygon points="46,366 60,380 46,394 32,380" fill="none" stroke="@AC@" stroke-width="1.2"/><polygon points="46,373 53,380 46,387 39,380" fill="@L1@"/>
+<use xlink:href="#cu" transform="translate(72 392)"/>
+</g>
+<g opacity="@NM@">
+<text x="150" y="140" text-anchor="middle" font-family="Noto Sans, DejaVu Sans, sans-serif" font-size="11" letter-spacing="3" fill="@MID@">print cover</text>
+<text x="150" y="@Y1@" text-anchor="middle" font-family="Noto Sans, DejaVu Sans, sans-serif" font-size="@TS@" font-weight="600" fill="@DEEP@">@T1@</text>
+<text x="150" y="@Y2@" text-anchor="middle" font-family="Noto Sans, DejaVu Sans, sans-serif" font-size="@TS@" font-weight="600" fill="@DEEP@">@T2@</text>
+<rect x="50" y="212" width="200" height="24" rx="12" fill="@L1@" fill-opacity=".6"/>
+<text x="150" y="228" text-anchor="middle" font-family="Noto Sans, DejaVu Sans, sans-serif" font-size="11" fill="@DEEP@">@FILE@</text>
+<text x="150" y="346" text-anchor="middle" font-family="Noto Sans, DejaVu Sans, sans-serif" font-size="11" fill="@MUTED@">@META@</text>
+</g>
+<rect x="118" y="252" width="64" height="64" rx="10" fill="none" stroke="@AC@" stroke-width="1.5"/>
+<polygon points="150,262 172,284 150,306 128,284" fill="@L1@" fill-opacity=".5" stroke="@L2@" stroke-width="1"/>
+<use xlink:href="#fa" transform="translate(150 284) scale(.75)"/>
+</g>
+</svg>

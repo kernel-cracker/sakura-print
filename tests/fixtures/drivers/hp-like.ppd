@@ -1,0 +1,42 @@
+*PPD-Adobe: "4.3"
+*% A small driver file shaped like hplip's, for tests
+*ModelName: "HP DeskJet 2700 series"
+*ColorDevice: True
+*OpenUI *PageSize/Media Size: PickOne
+*DefaultPageSize: Letter
+*PageSize Letter/Letter: "<</PageSize[612 792]/ImagingBBox null>>setpagedevice"
+*PageSize A4/A4: "<</PageSize[595 842]/ImagingBBox null>>setpagedevice"
+*PageSize Photo4x6.FB/4x6in Borderless: "<</PageSize[288 432]/ImagingBBox null>>setpagedevice"
+*PageSize Photo4x6/4x6in: "<</PageSize[288 432]/ImagingBBox null>>setpagedevice"
+*CloseUI: *PageSize
+*ImageableArea Letter/Letter: "18 36 594 783"
+*ImageableArea A4/A4: "18 36 577 833"
+*ImageableArea Photo4x6.FB/4x6in Borderless: "0 0 288 432"
+*ImageableArea Photo4x6/4x6in: "9 9 279 423"
+*PaperDimension Letter/Letter: "612 792"
+*PaperDimension A4/A4: "595 842"
+*PaperDimension Photo4x6.FB/4x6in Borderless: "288 432"
+*PaperDimension Photo4x6/4x6in: "288 432"
+*OpenUI *ColorModel/Output Mode: PickOne
+*DefaultColorModel: RGB
+*ColorModel RGB/Color: ""
+*ColorModel KGray/Grayscale: ""
+*CloseUI: *ColorModel
+*OpenUI *MediaType/Media Type: PickOne
+*DefaultMediaType: Plain
+*MediaType Plain/Plain Paper: ""
+*MediaType Glossy/HP Advanced Photo Paper: ""
+*MediaType Transparency/Transparency Film: ""
+*CloseUI: *MediaType
+*OpenUI *OutputMode/Print Quality: PickOne
+*DefaultOutputMode: Normal
+*OutputMode FastDraft/Fast Draft: ""
+*OutputMode Normal/Normal: ""
+*OutputMode Best/Best: ""
+*CloseUI: *OutputMode
+*OpenUI *Duplex/2-Sided Printing: PickOne
+*DefaultDuplex: None
+*Duplex None/Off: ""
+*Duplex DuplexNoTumble/Long Edge (Standard): ""
+*Duplex DuplexTumble/Short Edge (Flip): ""
+*CloseUI: *Duplex

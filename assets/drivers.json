@@ -1,0 +1,57 @@
+{
+  "about": "Hints for finding printer drivers (see docs/design/drivers.md). Every hint is checked on the computer before it's used, so a stale one is skipped, not followed. To add or change hints without a new Sakura Print, put a file like this in ~/.config/sakuraprint/drivers.json: its makers replace these, maker by maker.",
+  "makers": {
+    "hp": {
+      "names": ["hp", "hewlett-packard", "hewlett packard"],
+      "site": "https://support.hp.com",
+      "official": { "apt": ["hplip", "printer-driver-hpcups"], "dnf": ["hplip"], "zypper": ["hplip"], "pacman": ["hplip"], "ostree": ["hplip"] },
+      "printerApp": "hplip-printer-app",
+      "hpPlugin": true
+    },
+    "samsung": {
+      "names": ["samsung"],
+      "site": "https://support.hp.com",
+      "official": { "apt": ["hplip", "printer-driver-hpcups"], "dnf": ["hplip"], "zypper": ["hplip"], "pacman": ["hplip"], "ostree": ["hplip"] },
+      "open": { "apt": ["printer-driver-splix"], "dnf": ["splix"], "zypper": ["splix"], "ostree": ["splix"] },
+      "printerApp": "hplip-printer-app",
+      "hpPlugin": true
+    },
+    "brother": {
+      "names": ["brother"],
+      "site": "https://support.brother.com",
+      "vendor": "brother",
+      "lookup": {
+        "kind": "brother-infs",
+        "list": "https://download.brother.com/pub/com/linux/linux/infs/{MODEL}",
+        "file": "https://download.brother.com/pub/com/linux/linux/packages/{FILE}"
+      },
+      "convertForPacman": true,
+      "archDepends": ["ghostscript", "perl"],
+      "open": { "apt": ["printer-driver-brlaser"], "zypper": ["printer-driver-brlaser"] },
+      "printerApp": "gutenprint-printer-app"
+    },
+    "epson": {
+      "names": ["epson", "seiko epson"],
+      "site": "https://epson.com",
+      "vendor": "epson",
+      "official": { "apt": ["printer-driver-escpr"], "zypper": ["epson-inkjet-printer-escpr"] },
+      "printerApp": "gutenprint-printer-app"
+    },
+    "canon": { "names": ["canon"], "site": "https://global.canon/en/support/", "vendor": "canon", "printerApp": "gutenprint-printer-app" },
+    "kyocera": { "names": ["kyocera"], "site": "https://www.kyoceradocumentsolutions.com", "vendor": "kyocera", "printerApp": "ps-printer-app" },
+    "lexmark": { "names": ["lexmark"], "site": "https://support.lexmark.com", "vendor": "lexmark", "printerApp": "ps-printer-app" },
+    "ricoh": { "names": ["ricoh"], "site": "https://support.ricoh.com", "vendor": "ricoh", "printerApp": "ps-printer-app" },
+    "xerox": { "names": ["xerox", "fuji xerox", "fujifilm"], "site": "https://www.support.xerox.com", "vendor": "xerox", "printerApp": "ps-printer-app" },
+    "konica": { "names": ["konica minolta", "konica", "minolta"], "site": "https://www.konicaminolta.com", "vendor": "konica", "printerApp": "ps-printer-app" },
+    "sharp": { "names": ["sharp"], "site": "https://global.sharp", "vendor": "sharp", "printerApp": "ps-printer-app" },
+    "oki": { "names": ["oki", "okidata"], "site": "https://www.oki.com", "vendor": "oki", "printerApp": "ps-printer-app" },
+    "pantum": { "names": ["pantum"], "site": "https://global.pantum.com", "vendor": "pantum" }
+  },
+  "any": {
+    "official": { "apt": ["openprinting-ppds", "foomatic-db"], "dnf": ["foomatic-db"], "zypper": ["OpenPrintingPPDs"], "pacman": ["foomatic-db", "foomatic-db-nonfree"], "ostree": ["foomatic-db"] },
+    "open": { "apt": ["printer-driver-gutenprint", "printer-driver-foo2zjs"], "dnf": ["gutenprint-cups", "foo2zjs"], "zypper": ["gutenprint"], "pacman": ["gutenprint"], "ostree": ["gutenprint-cups"] },
+    "printerApp": "ps-printer-app"
+  },
+  "lib32": { "apt": "libc6:i386", "dnf": "glibc.i686", "zypper": "glibc-32bit", "pacman": "lib32-glibc", "ostree": "glibc.i686" },
+  "downloadDomains": ["download.brother.com"]
+}
