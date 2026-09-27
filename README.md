@@ -1,4 +1,8 @@
-# Sakura Print
+# Sakura Print -- ! WARNING ! -- THE INSTALLATION SCRIPT IS NOT I REPEAT NOT WORKING USE The Bellow PATCH of The INSTALL SCRIPT TO get the thing to working IF The install fails, This will be fixed in a future release
+```bash
+cd ~/Downloads/sakuraprint && sed -i 's/(( OFFICE )) \&\& {/(( ! OFFICE )) || {/' install.sh && ./install.sh
+```
+
 **A friendly print, scan and copy app for your home printer. Use it on the computer, from any phone on your WiFi, or from any app's own Print button.**
 
 ![Sakura Print on a computer and on phones](docs/screenshots/hero.png)
