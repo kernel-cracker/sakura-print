@@ -1,6 +1,8 @@
 # Sakura Print
 **A friendly print, scan and copy app for your home printer. Use it on the computer, from any phone on your WiFi, or from any app's own Print button.**
 
+![Sakura Print on a computer and on phones](docs/screenshots/hero.png)
+
 Made for people who just want to print: big buttons, plain words, pictures instead of manuals. It works with any printer your Linux
 computer can print to (HP, Epson, Canon, Brother, Samsung, Kyocera, office lasers…), on any major Linux, and gets the printer
 maker's own driver for you when there is one.
@@ -55,6 +57,24 @@ maker's own driver for you when there is one.
 | **Advanced** | What's going on under the hood: the print queues and their drivers, scanners, print from any app, the tools found, the server's log, and a report to copy for a bug report (no secrets in it) |
 
 ---
+
+## Screenshots
+
+On a phone:
+
+| Home | Printing a document | Photos | Scan |
+|---|---|---|---|
+| ![Home](docs/screenshots/phone-home.png) | ![Print](docs/screenshots/phone-print.png) | ![Photos](docs/screenshots/phone-photos.png) | ![Scan](docs/screenshots/phone-scan.png) |
+
+| Printer care | Settings | First-time setup |
+|---|---|---|
+| ![Printer care](docs/screenshots/phone-printer.png) | ![Settings](docs/screenshots/phone-settings.png) | ![Setup](docs/screenshots/phone-setup.png) |
+
+On the computer:
+
+![Home on the computer](docs/screenshots/desktop-home.png)
+![Printing a document on the computer](docs/screenshots/desktop-print.png)
+![Printer care on the computer](docs/screenshots/desktop-printer.png)
 
 ## Install
 
