@@ -1,8 +1,4 @@
-# Sakura Print -- ! WARNING ! -- THE INSTALLATION SCRIPT IS NOT I REPEAT NOT WORKING USE The Bellow PATCH of The INSTALL SCRIPT TO get the thing to working IF The install fails, This will be fixed in a future release
-```bash
-cd ~/Downloads/sakuraprint && sed -i 's/(( OFFICE )) \&\& {/(( ! OFFICE )) || {/' install.sh && ./install.sh
-```
-
+# Sakura Print
 **A friendly print, scan and copy app for your home printer. Use it on the computer, from any phone on your WiFi, or from any app's own Print button.**
 
 ![Sakura Print on a computer and on phones](docs/screenshots/hero.png)
@@ -85,11 +81,11 @@ On the computer:
 You need Linux, and a printer that's switched on (Sakura Print can set it up; if the computer already prints to it, even
 better).
 
-1. Download `sakuraprint-v0.21.2.zip` into your **Downloads** folder
+1. Download `sakuraprint-v0.21.3.zip` into your **Downloads** folder
 2. Open a terminal (`Ctrl + Alt + T`), paste this (`Ctrl + Shift + V`) and press Enter:
 
 ```bash
-cd ~/Downloads && rm -rf sakuraprint && unzip -o sakuraprint-v0.21.2.zip && cd sakuraprint && ./install.sh && cd ~/Downloads && rm -rf sakuraprint sakuraprint-v*.zip
+cd ~/Downloads && rm -rf sakuraprint && unzip -o sakuraprint-v0.21.3.zip && cd sakuraprint && ./install.sh && cd ~/Downloads && rm -rf sakuraprint sakuraprint-v*.zip
 ```
 
 It asks for your password once, for installing the tools (nothing shows while you type it, that's normal). Then it **builds

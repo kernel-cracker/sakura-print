@@ -33,5 +33,44 @@ if [ -n "$real" ]; then pass=$((pass + 1)); echo "  PASS this computer's real pr
 echo "installer: nothing ready-made is shipped"
 if [ -d bin ] || grep -q 'bin/sakuraprint-' install.sh; then fail=$((fail + 1)); echo "  FAIL there are ready-made programs (bin/): everyone builds their own"; else pass=$((pass + 1)); echo "  PASS everyone builds their own"; fi
 
+echo "installer: installing the tools, on pretend computers"
+# Found by a real install: with every tool already there, the installer still said "installing the printing tools
+# failed", on every distribution, unless --office was given. Here the real installer runs with stand-in package
+# managers (they say yes to everything and write down what they were asked), a stand-in sudo, and a stand-in Go
+# that stops it before anything is built or installed.
+deps() { # name package-manager flags expected-in-log not-expected-in-log
+  local pc="$tmp/pc-$2$3" got
+  rm -rf "$pc"; mkdir -p "$pc/bin" "$pc/home"
+  for t in bash env sh grep cut uname sed date awk mkdir readlink dirname cat tr head mv rm install; do
+    ln -s "$(command -v "$t")" "$pc/bin/$t"
+  done
+  for t in "$2" sudo go; do
+    printf '#!/bin/sh\necho "%s $*" >> "%s/log"\n' "$t" "$pc" > "$pc/bin/$t"
+  done
+  [ -n "$BROKEN" ] && echo "case \"\$*\" in *$BROKEN*) exit 1;; esac" >> "$pc/bin/$2"   # this package won't install
+  echo 'exec "$@"' >> "$pc/bin/sudo"            # sudo runs what it's given
+  echo 'case $1 in build) exit 1;; esac' >> "$pc/bin/go"   # stop before building anything
+  chmod +x "$pc/bin/$2" "$pc/bin/sudo" "$pc/bin/go"
+  got=$(HOME="$pc/home" XDG_DATA_HOME="$pc/home/.local/share" XDG_CONFIG_HOME="$pc/home/.config" PATH="$pc/bin" ./install.sh $3 2>&1)
+  if [[ $got == *"installing the printing tools failed"* ]] || [[ $got != *"building Sakura Print"* ]]; then
+    fail=$((fail + 1)); echo "  FAIL $1: the tools step didn't succeed"; printf '%s\n' "$got" | sed 's/^/      /' | tail -8; return
+  fi
+  if ! grep -q -- "$4" "$pc/log" || { [ -n "$5" ] && grep -q -- "$5" "$pc/log"; }; then
+    fail=$((fail + 1)); echo "  FAIL $1: asked the package manager for the wrong things:"; sed 's/^/      /' "$pc/log"; return
+  fi
+  pass=$((pass + 1)); echo "  PASS $1"
+}
+for pm in pacman apt-get dnf zypper; do
+  deps "$pm, everything there, without --office" "$pm" "" "qpdf" "libreoffice"
+  deps "$pm, with --office" "$pm" "--office" "libreoffice" ""
+done
+# and a required tool that won't install still stops it, with the message (the safety net doesn't hide real failures)
+for pm in pacman apt-get dnf zypper; do
+  out=$(BROKEN=qpdf deps "x" "$pm" "" "qpdf" "" 2>&1)
+  if [[ $out == *"FAIL x: the tools step didn't succeed"* && $out == *"installing the printing tools failed"* ]]; then
+    pass=$((pass + 1)); echo "  PASS $pm, a required tool won't install: it stops and says so"
+  else fail=$((fail + 1)); echo "  FAIL $pm, a required tool won't install: it carried on"; fi
+done
+
 echo "$pass passed, $fail failed"
 [ $fail -eq 0 ]

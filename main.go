@@ -21,7 +21,7 @@ import (
 	"time"
 )
 
-const version = "0.21.2"
+const version = "0.21.3"
 
 // buildInfo: how this copy was built (the installer builds everyone's own, tuned to their processor)
 var buildInfo = "built by hand"

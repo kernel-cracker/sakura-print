@@ -91,7 +91,7 @@ install_deps() {
     $SUDO pacman -S --needed "${opt[@]}" || warn "scanner tools didn't install, printing still works"
     $SUDO pacman -S --needed avahi || warn "avahi didn't install: phones won't find the printer by themselves for printing from other apps"
     $SUDO pacman -S --needed "${fmt[@]}" || warn "photo converters didn't install: iPhone (HEIC) and WebP pictures won't open"
-    (( OFFICE )) && { $SUDO pacman -S --needed "${office[@]}" || warn "LibreOffice didn't install: Word/Excel files won't open"; }
+    if (( OFFICE )); then $SUDO pacman -S --needed "${office[@]}" || warn "LibreOffice didn't install: Word/Excel files won't open"; fi
   elif command -v apt-get >/dev/null; then
     step "Debian/Ubuntu-based distro detected"
     req=(golang-go qpdf librsvg2-bin cups-client poppler-utils) opt=(sane-utils sane-airscan xdg-user-dirs) fmt=(libheif-examples imagemagick)
@@ -101,7 +101,7 @@ install_deps() {
     $SUDO apt-get install -y "${opt[@]}" || warn "scanner tools didn't install, printing still works"
     $SUDO apt-get install -y avahi-utils || warn "avahi didn't install: phones won't find the printer by themselves for printing from other apps"
     $SUDO apt-get install -y "${fmt[@]}" || warn "photo converters didn't install: iPhone (HEIC) and WebP pictures won't open"
-    (( OFFICE )) && { $SUDO apt-get install -y --no-install-recommends "${office[@]}" || warn "LibreOffice didn't install: Word/Excel files won't open"; }
+    if (( OFFICE )); then $SUDO apt-get install -y --no-install-recommends "${office[@]}" || warn "LibreOffice didn't install: Word/Excel files won't open"; fi
   elif command -v dnf >/dev/null; then
     step "Fedora-based distro detected"
     req=(golang qpdf librsvg2-tools cups-client poppler-utils) opt=(sane-backends sane-airscan xdg-user-dirs) fmt=(libheif-tools ImageMagick)
@@ -110,7 +110,7 @@ install_deps() {
     $SUDO dnf install -y "${opt[@]}" || warn "scanner tools didn't install, printing still works"
     $SUDO dnf install -y avahi-tools || warn "avahi didn't install: phones won't find the printer by themselves for printing from other apps"
     $SUDO dnf install -y "${fmt[@]}" || warn "photo converters didn't install: iPhone (HEIC) and WebP pictures won't open"
-    (( OFFICE )) && { $SUDO dnf install -y "${office[@]}" || warn "LibreOffice didn't install: Word/Excel files won't open"; }
+    if (( OFFICE )); then $SUDO dnf install -y "${office[@]}" || warn "LibreOffice didn't install: Word/Excel files won't open"; fi
   elif command -v zypper >/dev/null; then
     step "openSUSE detected"
     req=(go qpdf rsvg-convert cups-client poppler-tools) opt=(sane-backends sane-airscan xdg-user-dirs)
@@ -123,13 +123,14 @@ install_deps() {
     # the end of 2026), so this only works where Packman is already set up
     $SUDO zypper --non-interactive install heif-examples 2>/dev/null ||
       warn "iPhone HEIC files on this computer may not open (openSUSE lacks the HEVC codec). Photos sent from the iPhone's photo picker still work: it converts them".
-    (( OFFICE )) && { $SUDO zypper --non-interactive install "${office[@]}" || warn "LibreOffice didn't install: Word/Excel files won't open"; }
+    if (( OFFICE )); then $SUDO zypper --non-interactive install "${office[@]}" || warn "LibreOffice didn't install: Word/Excel files won't open"; fi
   else
     warn "couldn't recognise your package manager"
     warn "please install: Go, qpdf, rsvg-convert (librsvg), CUPS client tools, pdftoppm (poppler)"
     warn "for scanning also: sane + sane-airscan; for printing from other apps: avahi (avahi-publish-service)"
     warn "for iPhone photos and other pictures: libheif tools + ImageMagick; for Word/Excel files: LibreOffice"
   fi
+  return 0   # only a missing required tool (above) is a failure; a skipped extra never is
 }
 
 if (( DEPS )); then install_deps || die "installing the printing tools failed, see above"; fi
